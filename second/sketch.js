@@ -38,7 +38,7 @@ function draw() {
 	background(0);
 	
 	for (let x = 100; x < windowWidth-100; x+=steps) {
-		for (let y = 100; y < height-200; y+=steps) {
+		for (let y = 0; y < height; y+=steps) {
 			let mult = 0.2;
 			
 			// Decrease size the further it's from the mouse.

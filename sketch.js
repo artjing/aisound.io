@@ -21,7 +21,7 @@ function setup() {
   centerX = windowWidth/2;
   centerY = windowHeight/2+65;
 
-  let screenPct = min(height, width) / 1000;
+  let screenPct = min(height, width) / 1000 * 120;
   fontSize = screenPct * 150;
   INNER_RADIUS = screenPct * 240;
   RADIUS_VARIATION = screenPct * 240;
@@ -150,6 +150,7 @@ function keyPressed() {
     return;
   }else if(key === 'Enter')
   {
+      document.getElementById("loader").style.display = "block";
     sentiment = ml5.sentiment('movieReviews', modelReady);
     return;
   }else{
@@ -163,7 +164,7 @@ function modelReady() {
     const text = textToWrite.substring(0,textToWrite.length);
     console.log(textToWrite.substring(0,textToWrite.length));
 
-    const prediction = sentiment.predict("jjjjjjjjjj");
+    const prediction = sentiment.predict(text);
     console.log(prediction.score);
     var newurl= "second/musicplay.html?predict="+ prediction.score;
     window.location.href= newurl;
