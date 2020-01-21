@@ -150,7 +150,7 @@ function keyPressed() {
     return;
   }else if(key === 'Enter')
   {
-      document.getElementById("loader").style.display = "block";
+    document.getElementById("loader").style.display = "block";
     sentiment = ml5.sentiment('movieReviews', modelReady);
     return;
   }else{
