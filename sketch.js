@@ -2,13 +2,14 @@ let sentiment;
 let sentimentResult;
 
 var textToWrite = "Input here:";
-var typingSize = 28;
+var typingSize = 34;
 const SEGMENTS    = 200;
 let centerX, centerY, fontSize, INNER_RADIUS, RADIUS_VARIATION;
 var userInputText = "";
 var tileSize = 450;
 var tileSpeed = 1;
-
+var circleColor = 53
+var circleRadius = 250;
 var img;
 var colors = [];
 
@@ -26,8 +27,8 @@ function setup() {
 
   let screenPct = min(height, width) / 1000;
   fontSize = screenPct * 150;
-  INNER_RADIUS = screenPct * 180;
-  RADIUS_VARIATION = screenPct * 180;
+  INNER_RADIUS = screenPct * circleRadius;
+  RADIUS_VARIATION = screenPct * circleRadius;
   
   textFont('Helvetica');
   textSize(fontSize);
@@ -92,13 +93,13 @@ function draw() {
   text(title, 50, 60, 700, 100);
   
   let s = "Please try to recall the first memory in your life, and typing here using more than 30 words. ->->->->->";
-  fill(255,255,255,200);
-  textSize(20);
-  text(s, 52,128, 300, 300);
-  
+  fill(255,255,255,230);
+  textSize(18);
+  text(s, 52,133, 200, 300);
 
     //draw sphere
   beginShape();
+    fill(255,255,255,circleColor);
     for (let i = 0; i < SEGMENTS; i++) {
       let p0 = pointForIndex(i/SEGMENTS);
       vertex(p0.x, p0.y);
@@ -156,6 +157,7 @@ function keyPressed() {
     typingSize = 30;
     textToWrite='';
   }
+  
   if(key === 'Backspace'){
     textToWrite = textToWrite.substring(0,textToWrite.length-1);
     return;
