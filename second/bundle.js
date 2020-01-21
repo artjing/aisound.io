@@ -37796,8 +37796,8 @@ function start() {
         });
     })
         .then(function (vars) {
-        //document.querySelector('#status').classList.add('hidden');
-        //document.querySelector('#controls').classList.remove('hidden');
+        document.querySelector('#status').classList.add('hidden');
+        document.querySelector('#controls').classList.remove('hidden');
         document.querySelector('#keyboard').classList.remove('hidden');
         lstmKernel1 =magentamagenta
             vars['rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel'];
