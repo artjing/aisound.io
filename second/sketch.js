@@ -12,8 +12,8 @@ Site:
 */
 
 var speed = 0.1;
-var maxSize = 20;
-var falloff = 70;
+var maxSize = 30;
+var falloff = 100;
 var steps = 13;
 var color1;
 var color2;
@@ -38,8 +38,8 @@ function draw() {
 	background(0);
 	
 	for (let x = 100; x < windowWidth-100; x+=steps) {
-		for (let y = 0; y < height; y+=steps) {
-			let mult = 0.2;
+		for (let y = 50; y < height-100; y+=steps) {
+			let mult = 0.5;
 			
 			// Decrease size the further it's from the mouse.
             moveX = moveX + moveSpeedX;

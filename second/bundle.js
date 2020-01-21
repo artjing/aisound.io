@@ -37830,7 +37830,7 @@ function resetRnn() {
     }
     lastSample = tf.scalar(PRIMER_IDX, 'int32');
     currentPianoTimeSec = piano.now();
-    pianoStartTimestampMs = performance.now() - currentPianoTimeSec * 1000;
+    pianoStartTimestampMs = performance.now() - currentPianoTimeSec * 1000 * 1000;
     currentLoopId++;
     generateStep(currentLoopId);
 }
@@ -38286,7 +38286,7 @@ function changeMusicBaseOnEmotion(predict)
 
     if (predict<0.5) {
         console.log("触发了");
-        document.getElementById("pitch-d").value = 20;
+        document.getElementById("pitch-d").value = 50;
 
     }
 }
