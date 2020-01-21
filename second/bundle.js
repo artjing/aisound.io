@@ -37798,7 +37798,7 @@ function start() {
         .then(function (vars) {
         //document.querySelector('#status').classList.add('hidden');
         //document.querySelector('#controls').classList.remove('hidden');
-        //document.querySelector('#keyboard').classList.remove('hidden');
+        document.querySelector('#keyboard').classList.remove('hidden');
         lstmKernel1 =
             vars['rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel'];
         lstmBias1 = vars['rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias'];
@@ -38281,12 +38281,12 @@ function changeMusicBaseOnEmotion(predict)
     var emotion = predict;
     if (predict>0.8) {
         console.log("c触发了");
-        document.getElementById("pitch-c").value = 1;
+        document.getElementById("pitch-c").value = 20;
     }
 
     if (predict<0.5) {
         console.log("触发了");
-        document.getElementById("pitch-d").value = 1;
+        document.getElementById("pitch-d").value = 20;
 
     }
 }
