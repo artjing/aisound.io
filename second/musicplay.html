@@ -140,6 +140,9 @@ limitations under the License.
     .hidden {
       display: none;
     }
+    .show {
+      display: block;
+    }
     .image {
       position: absolute;
       left: 0px;
@@ -225,16 +228,39 @@ limitations under the License.
       text-align: center;
       margin-top: 15px;
     }
-  </style>
+/* Center the loader */
+  #loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #000000;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  }
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
 </head>
 <body>
   <!-- Header -->
-
   <div id="container">
   <div id="status">Loading...</div>
   <div id="memoryText">Memory</div>
-  <div id="describe">For Your Memory. The Unique Piano piece created by AI. </div>>
+  <div id="describe">For Your Memory. The Unique Piano piece created by AI. </div>
+  <div id="loader" class="hidden"></div>
+
     <div id="controls" class="hidden">
+
       <div class="control" style="margin-right: 20px;">
         Conditioning<br />
         <input type="radio" name="conditioning" id="conditioning-on">
@@ -352,7 +378,6 @@ limitations under the License.
       </div>
     </div>
 
-    
     <div id="keyboard" class="hidden"></div>
     <!-- <script src="sketch.js"></script> -->
 
@@ -388,6 +413,7 @@ limitations under the License.
        var url = "../index.html";
        window.location.href = url;
     }
+    document.getElementById("loader").classList.remove('hidden');
 
   </script>
 

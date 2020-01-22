@@ -37766,6 +37766,7 @@ function calculateEventSize() {
     }
     return eventOffset;
 }
+
 var EVENT_SIZE = calculateEventSize();
 var PRIMER_IDX = 355;
 var lastSample = tf.scalar(PRIMER_IDX, 'int32');
@@ -37783,10 +37784,14 @@ if (!isDeviceSupported) {
             'computer with Chrome/Firefox, or an Android phone with WebGL support.';
 }
 else {
+
     start();
+
+
 }
 var modelReady = false;
 function start() {
+
     piano.load(SALAMANDER_URL)
         .then(function () {
         return fetch(CHECKPOINT_URL + "/weights_manifest.json")
@@ -37799,6 +37804,10 @@ function start() {
         //document.querySelector('#status').classList.add('hidden');
         //document.querySelector('#controls').classList.remove('hidden');
         document.querySelector('#keyboard').classList.remove('hidden');
+        //document.getElementById('loader').style.display="none";
+        //document.getElementById('loader').style.opacity = 0;
+        document.querySelector('#loader').classList.add('hidden');
+
         lstmKernel1 =
             vars['rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel'];
         lstmBias1 = vars['rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias'];
