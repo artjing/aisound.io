@@ -92,7 +92,7 @@ function draw() {
   textSize(62);
   text(title, 50, 60, 700, 100);
   
-  let s = "Please try to recall the first memory in your life, and typing here using more than 30 words. ->->->->->";
+  let s = "Please recall your first memory and try to summarize it in one sentence. Please enter it directly, and press Enter.->->->->->";
   fill(255,255,255,230);
   textSize(18);
   text(s, 52,133, 200, 300);
